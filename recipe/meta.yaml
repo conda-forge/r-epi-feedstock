@@ -1,4 +1,4 @@
-{% set version = '2.37' %}
+{% set version = '2.38' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Epi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Epi/Epi_{{ version }}.tar.gz
-  sha256: 9306f991692318f61f594c5f83a545937133393bd2946b0011821b067aca56d1
+  sha256: 0da208bdbfe5bd60ec37a5aec246f39548045422daf16f11549e66eba54b8d2a
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -70,17 +70,18 @@ about:
     functions for tabulation and plotting, as well as a number of epidemiological data
     sets. '
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
 
 # Package: Epi
-# Version: 2.37
-# Date: 2019-05-22
+# Version: 2.38
+# Date: 2019-08-01
 # Title: A Package for Statistical Analysis in Epidemiology
-# Authors@R: c(person("Bendix", "Carstensen", role = c("aut", "cre"), email = "b@bxc.dk"), person("Martyn", "Plummer", role = "aut", email = "plummerm@iarc.fr"), person("Esa", "Laara", role = "ctb"), person("Michael", "Hills", role = "ctb"))
+# Authors@R: c(person("Bendix", "Carstensen", role = c("aut", "cre"), email = "b@bxc.dk"), person("Martyn", "Plummer", role = "aut", email = "Martyn.Plummer@warwick.ac.uk"), person("Esa", "Laara", role = "ctb"), person("Michael", "Hills", role = "ctb"))
 # Depends: R (>= 3.5.0), utils
 # Imports: cmprsk, etm, splines, MASS, survival, plyr, Matrix, numDeriv, data.table, zoo, mgcv
 # Suggests: mstate, nlme, lme4, popEpi
@@ -88,8 +89,8 @@ extra:
 # License: GPL-2
 # URL: http://BendixCarstensen.com/Epi/
 # NeedsCompilation: yes
-# Packaged: 2019-05-23 08:26:35 UTC; bendix
+# Packaged: 2019-08-06 06:50:31 UTC; bendix
 # Author: Bendix Carstensen [aut, cre], Martyn Plummer [aut], Esa Laara [ctb], Michael Hills [ctb]
 # Maintainer: Bendix Carstensen <b@bxc.dk>
 # Repository: CRAN
-# Date/Publication: 2019-05-23 17:30:03 UTC
+# Date/Publication: 2019-08-07 09:10:02 UTC
