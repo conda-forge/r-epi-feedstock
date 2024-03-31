@@ -3,6 +3,7 @@ About r-epi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-epi-feedstock/blob/main/LICENSE.txt)
 
+
 About r-epi
 -----------
 
@@ -11,6 +12,7 @@ Home: http://BendixCarstensen.com/Epi/
 Package license: GPL-2.0-only
 
 Summary: Functions for demographic and epidemiological analysis in the Lexis diagram, i.e. register and cohort follow-up data, in particular representation, manipulation and simulation of multistate  data - the Lexis suite of functions, which includes interfaces to 'mstate', 'etm' and 'cmprsk' packages.  Also contains functions for Age-Period-Cohort and Lee-Carter modeling and a function for interval censored data and some useful functions for tabulation and plotting, as well as a number of epidemiological data sets. 
+
 About r-epi
 -----------
 
@@ -153,7 +155,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
