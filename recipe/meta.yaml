@@ -1,4 +1,4 @@
-{% set version = "2.47.1" %}
+{% set version = "2.48" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Epi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Epi/Epi_{{ version }}.tar.gz
-  sha256: e13a051d31ac16c29e24d962bc9cb44d93bc0d8289249fc8a2c3337e1d3490a8
+  sha256: d7c7d998795894ce444560075d59eb699efcb887d0e3d50e0b0b1ed2452b2619
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -64,8 +64,8 @@ test:
 about:
   home: http://BendixCarstensen.com/Epi/
   license: GPL-2.0-only
-  summary: "Functions for demographic and epidemiological analysis in the Lexis diagram, i.e. register and cohort follow-up data, in particular representation, manipulation and simulation of multistate  data - the Lexis suite of functions, which includes interfaces to 'mstate', 'etm' and 'cmprsk' packages.  Also contains\
-    \ functions for Age-Period-Cohort and Lee-Carter modeling and a function for interval censored data and some useful functions for tabulation and plotting, as well as a number of epidemiological data sets. "
+  summary: "Functions for demographic and epidemiological analysis in the Lexis diagram, i.e. register and cohort follow-up data, in particular representation, manipulation and simulation of multistate  data - the Lexis suite of functions, which includes interfaces to 'mstate', 'etm' and 'cmprsk' packages.  Also contains
+    functions for Age-Period-Cohort and Lee-Carter modeling and a function for interval censored data and some useful functions for tabulation and plotting, as well as a number of epidemiological data sets. "
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
