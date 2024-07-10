@@ -1,4 +1,4 @@
-{% set version = "2.51" %}
+{% set version = "2.52" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Epi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Epi/Epi_{{ version }}.tar.gz
-  sha256: 33464decffb05137bd6c9f6ce9b3f0fca407428f2bcb70366d98261a04dc3955
+  sha256: 5e432c40a7e42021275672c8a4592c6bc67c4275b3d9ae61c3e21fc4c60acf41
 
 build:
   merge_build_host: true  # [win]
