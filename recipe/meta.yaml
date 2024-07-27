@@ -1,6 +1,5 @@
 {% set version = "2.53" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-epi
@@ -13,8 +12,7 @@ source:
   sha256: 1193c7f5b1b5c0a5e5b221302b11e867fbf9ac59b6d1960b2d681d4984dcbed9
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -45,7 +43,6 @@ requirements:
     - r-zoo
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-matrix
     - r-cmprsk
