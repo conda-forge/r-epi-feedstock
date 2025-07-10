@@ -1,4 +1,4 @@
-{% set version = "2.59" %}
+{% set version = "2.60" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Epi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Epi/Epi_{{ version }}.tar.gz
-  sha256: 00d630908d1cd06a13d0df12d32e56840992021b6d3769e2b2b5d68078967637
+  sha256: 29d6d91a7a0f04369852738fce009b3aefa59c65380174b6eec24ba7046aec57
 
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -28,6 +32,10 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    # The libstdc++.dll provided in libstdcxx v15.1.0 build h904f734_2
+    # is missing `_ZSt21ios_base_library_initv`.
+    # see: conda-forge/ctng-compilers-feedstock#174
+    - libstdcxx !=14.3.0,!=15.1.0  # [win]
   host:
     - r-base
     - r-mass
@@ -36,6 +44,7 @@ requirements:
     - r-data.table
     - r-dplyr
     - r-etm
+    - r-magrittr
     - r-mgcv
     - r-numderiv
     - r-plyr
@@ -49,11 +58,14 @@ requirements:
     - r-data.table
     - r-dplyr
     - r-etm
+    - r-magrittr
     - r-mgcv
     - r-numderiv
     - r-plyr
     - r-survival
     - r-zoo
+  run_constrained:
+    - libstdcxx !=14.3.0,!=15.1.0           # [win]
 
 test:
   commands:
