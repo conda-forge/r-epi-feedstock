@@ -1,4 +1,4 @@
-{% set version = "2.60" %}
+{% set version = "2.61" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Epi_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Epi/Epi_{{ version }}.tar.gz
-  sha256: 29d6d91a7a0f04369852738fce009b3aefa59c65380174b6eec24ba7046aec57
+  sha256: 66b10d8737b079ed13de874c6023a23256ebabb91f160ae8b916ae5c1002eca3
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
